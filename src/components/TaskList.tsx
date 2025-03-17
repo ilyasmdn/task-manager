@@ -28,11 +28,11 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, setTasks }) => {
           <div>
           <button 
             onClick={() => toggleComplete(task.id)} 
-            className={`${task.completed ? "bg-amber-600" : "bg-green-600"} mx-2 text-white rounded p-2`}
+            className={`${task.completed ? "bg-amber-600 hover:bg-amber-700" : "bg-green-600 hover:bg-green-700"} mx-2 text-white rounded p-2 cursor-pointer transition duration-300`}
           >
             {task.completed ? "Undo" : "Complete"}
           </button>
-            <button onClick={() => deleteTask(task.id)} className="mx-2 bg-red-600 text-white rounded p-2">
+            <button onClick={() => deleteTask(task.id)} className="mx-2 bg-red-600 text-white rounded p-2 hover:bg-red-700 cursor-pointer transition duration-300">
               Delete
             </button>
           </div>

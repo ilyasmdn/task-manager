@@ -15,7 +15,6 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask }) => {
       }
     };
 
-
   return (
     <div className='py-6'>
       <h2 className='text-3xl text-gray-700 font-bold text-center'>Add a task</h2>
@@ -28,7 +27,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask }) => {
         onChange={(e) => setTask(e.target.value)}
         />
         <button 
-        className='w-32 bg-red-500 text-white p-2 rounded-lg cursor-pointer hover:bg-red-600 transition duration-300'
+        className='w-32 bg-green-600 text-white p-2 rounded-lg cursor-pointer hover:bg-green-700 transition duration-300'
         onClick={handleClick}
         >
           Add Task

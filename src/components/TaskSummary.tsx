@@ -14,10 +14,10 @@ const TaskSummary = ({ tasks }: { tasks: Task[] }) => {
     <div className="mt-4">
       <h2 className="text-3xl text-gray-700 font-bold text-center">Task Summary</h2>
       <div className="mt-4 bg-gray-200 p-4 rounded-lg shadow-md">
-        <p className="text-gray-700">Total Tasks: {totalTasks}</p>
-        <p className="text-green-500">Completed: {completedTasks}</p>
-        <p className="text-amber-600">Remaining: {remainingTasks}</p>
-        <p className="text-blue-500">Progress: {completionRate}%</p>
+        <p className="font-medium text-xl text-gray-700">Total Tasks: {totalTasks}</p>
+        <p className="font-medium text-lg text-green-500">Completed: {completedTasks}</p>
+        <p className="font-medium text-lg text-amber-600">Remaining: {remainingTasks}</p>
+        <p className="font-medium text-lg text-blue-500">Progress: {completionRate}%</p>
       </div>
     </div>
   );
