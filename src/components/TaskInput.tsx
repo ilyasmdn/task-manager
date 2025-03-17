@@ -12,7 +12,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask }) => {
       if (task.trim()) {
         onAddTask(task);
         setTask('');
-      }x  
+      }
     };
 
 

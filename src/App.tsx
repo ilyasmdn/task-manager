@@ -3,7 +3,6 @@ import Header from './components/Header'
 import TaskInput from './components/TaskInput'
 import TaskList from './components/TaskList'
 import TaskSummary from './components/TaskSummary'
-import localStorageHelper from './utils/localStorageHelper'
 
 type Task = {
   id: number;
@@ -39,6 +38,7 @@ const App = () => {
       <main className='px-10 py-5'>
         <TaskInput onAddTask={addTask}/>
         <TaskList tasks={tasks} setTasks={setTasks} />
+        <TaskSummary tasks={tasks} />
       </main>
     </div>
   )

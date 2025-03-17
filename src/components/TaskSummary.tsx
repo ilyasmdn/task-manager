@@ -1,25 +1,26 @@
-import React from 'react'
-
-const TaskSummary = () => {
-  return (
-    <div className='py-6'>
-      <h2 className='text-3xl text-gray-700 font-bold text-center py-6'>Task Summary</h2>
-      <div className='flex justify-center items-center gap-4'>
-        <div className='bg-green-500 text-white p-4 rounded-lg'>
-          <h3 className='text-xl font-bold'>Total Tasks</h3>
-          <p className='text-2xl font-bold'>5</p>
-        </div>
-        <div className='bg-blue-500 text-white p-4 rounded-lg'>
-          <h3 className='text-xl font-bold'>Completed Tasks</h3>
-          <p className='text-2xl font-bold'>3</p>
-        </div>
-        <div className='bg-red-500 text-white p-4 rounded-lg'>
-          <h3 className='text-xl font-bold'>Pending Tasks</h3>
-          <p className='text-2xl font-bold'>2</p>
-        </div>
-      </div>
-    </div>
-  )
+interface Task {
+  id: number;
+  name: string;
+  completed: boolean;
 }
 
-export default TaskSummary
+const TaskSummary = ({ tasks }: { tasks: Task[] }) => {
+  const totalTasks = tasks.length;
+  const completedTasks = tasks.filter(task => task.completed).length;
+  const remainingTasks = totalTasks - completedTasks;
+  const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+
+  return (
+    <div className="mt-4">
+      <h2 className="text-3xl text-gray-700 font-bold text-center">Task Summary</h2>
+      <div className="mt-4 bg-gray-200 p-4 rounded-lg shadow-md">
+        <p className="text-gray-700">Total Tasks: {totalTasks}</p>
+        <p className="text-green-500">Completed: {completedTasks}</p>
+        <p className="text-amber-600">Remaining: {remainingTasks}</p>
+        <p className="text-blue-500">Progress: {completionRate}%</p>
+      </div>
+    </div>
+  );
+};
+
+export default TaskSummary;
