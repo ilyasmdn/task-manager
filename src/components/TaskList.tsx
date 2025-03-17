@@ -24,10 +24,13 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, setTasks }) => {
         <li key={task.id} className="flex justify-between items-center bg-white border border-gray-300 p-2 rounded shadow mb-2">
           <span className={task.completed ? "line-through text-gray-500" : ""}>{task.name}</span>
           <div>
-            <button onClick={() => toggleComplete(task.id)} className="mx-2 text-green-600">
-              {task.completed ? "Undo" : "Complete"}
-            </button>
-            <button onClick={() => deleteTask(task.id)} className="mx-2 text-red-600">
+          <button 
+            onClick={() => toggleComplete(task.id)} 
+            className={`${task.completed ? "bg-amber-600" : "bg-green-600"} mx-2 text-white rounded p-2`}
+          >
+            {task.completed ? "Undo" : "Complete"}
+          </button>
+            <button onClick={() => deleteTask(task.id)} className="mx-2 bg-red-600 text-white rounded p-2">
               Delete
             </button>
           </div>
