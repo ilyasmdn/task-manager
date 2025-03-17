@@ -19,6 +19,8 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, setTasks }) => {
   };
 
   return (
+    <div>
+    {tasks.length !== 0 && <h2 className="text-3xl text-gray-700 font-bold text-center">Tasks</h2>}
     <ul className="mt-4">
       {tasks.map((task) => (
         <li key={task.id} className="flex justify-between items-center bg-white border border-gray-300 p-2 rounded shadow mb-2">
@@ -37,6 +39,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, setTasks }) => {
         </li>
       ))}
     </ul>
+    </div>
   );
 };
 
