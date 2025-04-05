@@ -21,16 +21,16 @@ const App = () => {
     }
   }, []);
 
+  const newId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 1;
 
   const addTask = (task: string) => {
     const newTask = {
-      id: tasks.length + 1,
+      id: newId,
       name: task,
       completed: false,
     };
     setTasks([...tasks, newTask]);
   };
-
 
   return (
     <div className=''>
